@@ -1,0 +1,10 @@
+figure(1);
+h = histogram(Dia, 30);
+title('PEO Size Distribution');
+xlabel('Equivalent Diameter (\mum)');
+ylabel('Count');
+%saveas(h,'D:\OneDrive - University of Calgary\Projects\Cocontinuous Blends\Analysis\Confocal Microscopy\PP-PEO 85-15\CF 03-02 squished.jpg');
+NomDia = h.BinEdges' + h.BinWidth/2;
+NomDia = NomDia(1:end-1,:);
+Count = h.Values';
+HistTable = cat(2,NomDia,Count);
